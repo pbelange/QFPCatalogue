@@ -1,0 +1,8 @@
+*.ipynb_checkpoint*
+*__pycache*
+*.c
+*.o
+*.pkl
+*.json
+*.DS_Store
+
