@@ -113,11 +113,11 @@ import BBStudies.Physics.Constants as cst
 
 
 
-def load_tracked(line_ID,sf=10,skipfirst=15):
+def load_tracked(line_ID,sf=10,skipfirst=15,FOLDER = 'Tracking/'):
     tracked = {}
     for label in ['ref','HO','LR','OCTU','BBCW']:
-        tracked[label] = pd.read_pickle(f'Tracking/tracked_{label}_sf{sf}_{line_ID}.pkl')
-    tracked['coord'] = pd.read_pickle(f'Tracking/coordinates_{line_ID}.pkl')
+        tracked[label] = pd.read_pickle(f'{FOLDER}/tracked_{label}_sf{sf}_{line_ID}.pkl')
+    tracked['coord'] = pd.read_pickle(f'{FOLDER}/coordinates_{line_ID}.pkl')
     tracked['sf'] = sf
     _coord = tracked['coord']
     ctour_idx  = list(_coord[_coord['theta_sig'] == np.min(_coord['theta_sig'])].index)
